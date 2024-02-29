@@ -17,6 +17,19 @@ defmodule ExAws.ECRTest do
     ]
   end
 
+  test "describe_images" do
+    req = ExAws.ECR.describe_images(expected_repo(), filter: %{"tagStatus" => "TAGGED"})
+
+    assert req.data == %{
+             "Action" => "DescribeImages",
+             "Version" => expected_version(),
+             "repositoryName" => expected_repo(),
+             "filter" => %{"tagStatus" => "TAGGED"}
+           }
+
+    assert req.headers == expected_headers("DescribeImages")
+  end
+
   test "list_images" do
     req = ExAws.ECR.list_images(expected_repo(), filter: %{"tagStatus" => "TAGGED"})
 
