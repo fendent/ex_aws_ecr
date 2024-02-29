@@ -45,7 +45,7 @@ defmodule ExAws.ECR.MixProject do
   end
 
   defp description do
-    "#{@name} service package"
+    "#{@name} service package for ExAws"
   end
 
   defp package do

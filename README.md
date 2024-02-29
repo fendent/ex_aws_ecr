@@ -1,6 +1,6 @@
 # ExAws.ECR
 
-**TODO: Add description**
+ExAws.ECR service package for ExAws
 
 ## Installation
 
